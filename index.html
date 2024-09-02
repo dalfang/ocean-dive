@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OctoPass</title>
+</head>
+<body>
+  <main>
+
+         <!-- Game Introduction Screen -->
+    <div id="game-intro">
+      <h1>OctoPass</h1>
+      <button id="start-button">Start Game</button>
+      <audio id="backgroundMusic" loop src="./sounds/bg.mp3" type="audio/mp3"></audio>
+      <button id="musicToggle"></button>
+    </div>
+    <div id="instructions"> 
+      <!-- Game instructions will be added here -->
+      <img src="xxxx" alt="Instructions game" />
+    </div>
+
+     <!-- Game Play Area -->
+    <div id="game-screen">
+      <h2>
+        Health: <span id="lives">5</span>
+      </h2>
+    </div>
+    <div id="runningscore-container">
+      <h2>Score: <span id="score">0</span></h2>
+    </div>
+
+    <div id="audiobutton">
+      <!-- Game audio will be added here -->
+      <img src="xxxxx" alt="Audio Control Button" class="audio-img" />
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="game-end" style="display:none;">
+      <h1>GAME OVER</h1>
+      <h3>FINAL SCORE</h3>
+      <span id="final-score">0</span>
+      <br />
+      <button id="restart-button">Restart</button>
+    </div>
+  </main>
+
+  <!-- JavaScript Files -->
+  <script type="text/javascript" src="./js/bonus.js"></script>
+  <script type="text/javascript" src="./js/game.js"></script>
+  <script type="text/javascript" src="./js/heart.js"></script>
+  <script type="text/javascript" src="./js/obstacle.js"></script>
+  <script type="text/javascript" src="./js/player.js"></script>
+  <script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
