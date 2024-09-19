@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./styles/style.css" />
   <title>OctoPass</title>
 </head>
 <body>
@@ -15,6 +17,7 @@
       <audio id="backgroundMusic" loop src="./sounds/bg.mp3" type="audio/mp3"></audio>
       <button id="musicToggle"></button>
     </div>
+
     <div id="instructions"> 
       <!-- Game instructions will be added here -->
       <img src="xxxx" alt="Instructions game" />
@@ -26,14 +29,11 @@
         Health: <span id="lives">5</span>
       </h2>
     </div>
+    
     <div id="runningscore-container">
       <h2>Score: <span id="score">0</span></h2>
     </div>
 
-    <div id="audiobutton">
-      <!-- Game audio will be added here -->
-      <img src="xxxxx" alt="Audio Control Button" class="audio-img" />
-    </div>
 
     <!-- Game Over Screen -->
     <div id="game-end" style="display:none;">

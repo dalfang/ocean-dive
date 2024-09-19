@@ -16,7 +16,7 @@ class Obstacle {
         this.left = 900
 
         this.element = document.createElement('img');
-        this.element.src = './img/Rock1.png';
+        this.element.src = './img/rock.png';
         this.element.style.position = "absolute";
         this.element.style.width = `${this.width}px`;
         this.element.style.height = `${this.height}px`;

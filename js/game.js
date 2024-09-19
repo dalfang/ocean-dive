@@ -5,8 +5,8 @@ class Game {
         this.gameScreen = document.getElementById("game-screen");
         this.gameEndScreen = document.getElementById("game-end");
         this.player = new Player(this.gameScreen, 40, -300, './img/Playerright.png');
-        this.height = 600;
-        this.width = 900;
+        this.height = 590;
+        this.width = 990;
 
         this.obstacles = [];
 
@@ -15,9 +15,11 @@ class Game {
         this.bonuses = [new Bonus(this.gameScreen)];
 
         this.soundTrack = null;
+        this.backgroundMusic = document.getElementById('backgroundMusic');
+
         this.score = 0;
         this.bubbles = 0;
-        this.lives = 5;
+        this.lives = 185;
         this.isGameOver = false;
         this.gameIntervalId = null;
         this.gameLoopFrequency = 1000 / 60;
@@ -64,7 +66,7 @@ class Game {
         this.gameIntervalId = setInterval(() => {
             this.gameLoop();
         }, this.gameLoopFrequency);
-        this.loadAudio('./sounds/bg.mp3');
+        //this.loadAudio('./sounds/bg.mp3');
         setTimeout(() => {
             this.playSoundTrack();
         }, 1000);

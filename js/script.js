@@ -46,15 +46,20 @@ window.onload = function () {
 
     }
 
-    audiobutton.addEventListener("click", () => {
-        this.soundTrack.play()
-    });
-
-    audiobutton. addEventListener("click", () => {
-        soundTrack.muted = true;
-        this.soundTrack.pause();
-    });
-
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const backgroundMusic = document.getElementById('backgroundMusic');
+      backgroundMusic.play(); 
+  
+      const musicToggle = document.getElementById('musicToggle');
+      musicToggle.addEventListener('click', function() {
+          if (backgroundMusic.paused) {
+              backgroundMusic.play(); 
+          } else {
+              backgroundMusic.pause();
+          }
+      });
+  });
+  
     restartButton.addEventListener("click", () => {
      window.location.reload();
     });

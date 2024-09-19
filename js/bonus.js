@@ -5,12 +5,12 @@ class Bonus {
         this.width = 60
         this.left = 2400
 
-        this.topArr = [50, 100, 150, 200, 250, 300, 350, 400, 450, 515]
+        this.topArr = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
         this.randomIndex = Math.floor(Math.random() * this.topArr.length)
         this.top = this.topArr[this.randomIndex]
 
         this.element = document.createElement('img');
-        this.element.src = './assets/Bonus.png';
+        this.element.src = './img/bonus.png';
         this.element.style.position = "absolute";
         this.element.style.width = `${this.width}px`;
         this.element.style.height = `${this.height}px`;
