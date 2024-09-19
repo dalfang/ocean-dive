@@ -5,17 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="./styles/style.css" />
-  <title>OctoPass</title>
+  <title>MarineScape</title>
 </head>
 <body>
   <main>
 
-         <!-- Game Introduction Screen -->
+    <!-- Game Introduction Screen -->
     <div id="game-intro">
-      <h1>OctoPass</h1>
+      <h1>MarineScape</h1>
       <button id="start-button">Start Game</button>
-      <audio id="backgroundMusic" loop src="./sounds/bg.mp3" type="audio/mp3"></audio>
-      <button id="musicToggle"></button>
     </div>
 
     <div id="instructions"> 
@@ -23,17 +21,22 @@
       <img src="xxxx" alt="Instructions game" />
     </div>
 
-     <!-- Game Play Area -->
-    <div id="game-screen">
+    <!-- Game Play Area -->
+    <div id="lives-container">
+      <audio id="backgroundMusic" loop src="./sounds/bg.mp3" type="audio/mp3"></audio>
+      <button id="musicToggle"></button>
       <h2>
         Health: <span id="lives">5</span>
       </h2>
     </div>
     
-    <div id="runningscore-container">
-      <h2>Score: <span id="score">0</span></h2>
+    <div id="game-screen">
+      <!-- Game screen content will go here -->
     </div>
 
+    <div id="score-container">
+      <h2>Score: <span id="score">0</span></h2>
+    </div>
 
     <!-- Game Over Screen -->
     <div id="game-end" style="display:none;">

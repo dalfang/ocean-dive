@@ -1,125 +1,141 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-
 body {
-    padding: 0;
-    text-align: center;
-    color: #32aadd;
-    font-family: "Press Start 2P";
-    background-color: #020203;
-  }
-  
-  body {
-    padding: 0;
-    text-align: center;
-    color: #32aadd;
-    font-family: "Press Start 2P";
-    background-color: #0d0d0e;
-  }
-  
-  #instructions {
-    display: none;
-    margin-right: auto;
-    margin-top: 100px;
-    align-content: center;
+  padding: 0;
+  text-align: center;
+  color: #32aadd;
+  font-family: "Press Start 2P";
+  background-color: #020203;
 }
 
+#game-intro {
+  padding-top: 200px;
+}
+
+#instructions {
+  display: none;
+  margin-right: auto;
+  margin-top: 100px;
+  align-content: center;
+}
+
+#lives-container {
+  position: relative;
+  padding-top: 40px;
+  padding-left: 200px;
+  display: flex;
+  color: #eceded;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#musicToggle {
+  position: absolute;
+  right: 262px;
+  top: -25px; 
+  width: 10px; 
+  height: 10px; 
+  background-image: url('../img/speaker.png'); 
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-color: #020203;
+  border: none;
+  cursor: pointer;
+}
+
+#musicToggle.paused {
+  background-image: url('../img/mute.png'); /* Image for when music is paused */
+  background-size: cover;
+  background-size: 20px;
+  background-repeat: no-repeat;
+
+}
+
+#score-container {
+  display: flex;
+  padding-right: 200px;
+  color: #eceded;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+
+#lives-container,
+#score-container {
+  display: none;
+}
 
 #game-screen {
-    display: none;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    align-content: center;
-    overflow: hidden;
-    position: relative;
-    background-color: white;
-    background-image: url('../img/bg.png');
-    background-size: cover;
-    background-repeat: repeat-x; 
-    animation: slide 5s linear infinite;
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3px;
+  align-content: center;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+  background-image: url('../img/bg.png');
+  background-size: cover;
+  background-repeat: repeat-x; 
+  animation: slide 5s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    background-position: 900px 0;
   }
-  
-  
-  @keyframes slide {
-    0% {
-      background-position: 900px 0;
-    }
-    100% {
-      background-position: 0px 0;
-    }
+  100% {
+    background-position: 0px 0;
   }
-  
-  
-  #game-end {
-    display: none;
-    padding: 80px 0px;
-  }
-  
-  h3 {
-      color: #32aadd;
-      font-family: "Press Start 2P";
-      font-size: 35px;
-      padding-top: 60px;
-      padding-bottom: px;
-    }
-  #final-score {
-      font-size: 35px;
-      color: #ECEDED;
-  }
-  
-  /*
-  .game-over-img {
-      width: 200px;
-  }
-  */
-  
-  body button {
-    font-size: 30px;
-    background-color: #000088;
-    color: #32aadd;
-    padding: 20px 20px;
-    border: 3;
-    border-color: #32aadd;
-    box-shadow: 0;
-    margin-top: 80px;
-    margin-bottom: 80px;
-    font-family: "Press Start 2P";
-  }
-  
-  #start-button:hover {
-      background-color: #32aadd;
-      color: #000088;
-  }
-  
-  #restart-button:hover {
-      background-color: #32aadd;
-      color: #000088;
-  }
-  
-  
-  .pulsate {
-      -webkit-animation: pulsate 0.25s linear;
-  }
-  
-  @-webkit-keyframes pulsate {
-      0% {-webkit-transform: scale(1, 1); opacity: 1;}
-      25% {-webkit-transform: scale(1.2, 1.2); opacity: 0.5;}
-      50% {-webkit-transform: scale(1, 1); opacity: 1;}
-      100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.9;}
-  }
-  
-  #musicToggle {
-    position: fixed;
-    padding: 10px 20px;
-    top: 10px;
-    right: 10px;
-    background-image: url('../img/speaker.png');
-    background-color: #FFF;
-    border: none;
-    width: 20px;
-    height: 40px;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
+}
+
+#game-end {
+  display: none;
+  padding: 80px 0px;
+}
+
+h3 {
+  color: #32aadd;
+  font-family: "Press Start 2P";
+  font-size: 35px;
+  padding-top: 60px;
+  padding-bottom: 10px;
+}
+
+#final-score {
+  font-size: 35px;
+  color: #ECEDED;
+}
+
+body button {
+  font-size: 30px;
+  background-color: #000088;
+  color: #32aadd;
+  padding: 20px 20px;
+  border: 3;
+  border-color: #32aadd;
+  box-shadow: 0;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  font-family: "Press Start 2P";
+}
+
+#start-button:hover {
+  background-color: #32aadd;
+  color: #000088;
+}
+
+#restart-button:hover {
+  background-color: #32aadd;
+  color: #000088;
+}
+
+.pulsate {
+  -webkit-animation: pulsate 0.25s linear;
+}
+
+@-webkit-keyframes pulsate {
+  0% {-webkit-transform: scale(1, 1); opacity: 1;}
+  25% {-webkit-transform: scale(1.2, 1.2); opacity: 0.5;}
+  50% {-webkit-transform: scale(1, 1); opacity: 1;}
+  100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.9;}
 }

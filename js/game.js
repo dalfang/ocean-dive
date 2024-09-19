@@ -5,21 +5,16 @@ class Game {
         this.gameScreen = document.getElementById("game-screen");
         this.gameEndScreen = document.getElementById("game-end");
         this.player = new Player(this.gameScreen, 40, -300, './img/Playerright.png');
-        this.height = 590;
-        this.width = 990;
-
+        //this.backgroundMusic = document.getElementById('backgroundMusic');
+        //this.backgroundMusic.volume = 0.25;
+        this.height = 585;
+        this.width = 900;
         this.obstacles = [];
-
         this.hearts = [new Heart(this.gameScreen)];
-
         this.bonuses = [new Bonus(this.gameScreen)];
-
-        this.soundTrack = null;
-        this.backgroundMusic = document.getElementById('backgroundMusic');
-
         this.score = 0;
         this.bubbles = 0;
-        this.lives = 185;
+        this.lives = 5;
         this.isGameOver = false;
         this.gameIntervalId = null;
         this.gameLoopFrequency = 1000 / 60;
@@ -27,34 +22,13 @@ class Game {
         this.level = 120
     }
 
-    loadAudio(url) {
-        fetch(url)
-            .then(response => response.arrayBuffer())
-            .then(arrayBuffer => new (window.AudioContext || window.webkitAudioContext)().decodeAudioData(arrayBuffer))
-            .then(audioBuffer => {
-                this.soundTrack = audioBuffer;
-            })
-            .catch(e => console.error('Error with decoding audio data', e));
-    }
-
-    playSoundTrack() {
-        if (this.soundTrack) {
-            const source = this.audioContext.createBufferSource();
-            source.buffer = this.soundTrack;
-            source.loop = true;
-            source.connect(this.audioContext.destination);
-            source.start(0);
-        }
-    }
     instructions() {
         this.instructionsScreen.style.display = "block"
         this.instructionsScreen.style.height = `${this.height}px`;
         this.gameScreen.style.width = `${this.width}px`;
         this.startScreen.style.display = "none";
         this.gameScreen.style.display = "none";
-
     }
-
 
     start() {
         this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -63,16 +37,15 @@ class Game {
         this.gameScreen.style.width = `${this.width}px`;
         this.startScreen.style.display = "none";
         this.gameScreen.style.display = "block";
+        document.getElementById("lives-container").style.display = "flex";
+        document.getElementById("score-container").style.display = "flex";
         this.gameIntervalId = setInterval(() => {
             this.gameLoop();
         }, this.gameLoopFrequency);
-        //this.loadAudio('./sounds/bg.mp3');
         setTimeout(() => {
             this.playSoundTrack();
         }, 1000);
     }
-
-
 
     gameLoop() {
       this.update();
@@ -190,6 +163,9 @@ class Game {
     gameOver() {
         this.gameScreen.style.display = "none"
         this.gameEndScreen.style.display = "block"
+
+        document.getElementById("lives-container").style.display = "none";
+        document.getElementById("score-container").style.display = "none";
         document.getElementById('final-score').innerText = this.score
     }
 }
