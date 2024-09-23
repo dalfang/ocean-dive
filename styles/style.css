@@ -79,6 +79,10 @@ body {
   animation: slide 5s linear infinite;
 }
 
+#instructions img {
+  max-width: 1000px;
+}
+
 @keyframes slide {
   0% {
     background-position: 900px 0;
